@@ -51,7 +51,31 @@ select max(salary) from emp_payroll;
 select count(salary) from emp_payroll;  
 select avg(salary) from emp_payroll;  
 select sum(salary) from emp_payroll where
-	gender='F' group by gender;
+gender='F' group by gender;
 
+#uc8
+alter table emp_payroll 
+add phone varchar(20), 
+add address varchar(200) default 'address1' ,
+add department varchar(20)  not null ;
 
+#Uc9
+alter table emp_payroll 
+add basic_pay int, 
+add deductions int,
+add taxable_pay int  ,
+add tax int,
+add net_pay int;
 
+#Uc10
+
+DELETE FROM emp_payroll 
+WHERE id IN (1 , 2, 3, 4);
+
+insert into emp_payroll (name,department,gender,basic_pay,deductions,taxable_pay,tax,net_pay,start,salary) values
+	('Terissa','Marketing','F',3000000,1000000,2000000,500000,1500000,'2021-07-08',90000);
+    
+insert into emp_payroll (name,department,gender,basic_pay
+,deductions,taxable_pay,tax,net_pay,start,salary) values
+	('Terissa','Sales','F',3000000,
+0,0,0,0,'2021-06-01',89999);
